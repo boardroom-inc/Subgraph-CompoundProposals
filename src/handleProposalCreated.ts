@@ -5,6 +5,13 @@ import {
 import { Proposal } from "../generated/schema"
 import { ADDRESS_ZERO, getVoter, getProposal } from "./HELPERS"
 
+
+/*
+Note: We do not handle the Proposal state in the subgraph. 
+This can be compute on the front end and consumes too many resources
+to check in the Subgraph. It shoudl be computed at read time on 
+the front end. 
+*/
 export function handleProposalCreated(event: ProposalCreated): void {
 
     let proposalId = event.params.id
