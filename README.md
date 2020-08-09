@@ -1,8 +1,8 @@
 # Subgraph-CompoundProposals
 A subgraph for Compound Governance Proposals
 
-GraphQL Playground: 
+*GraphQL Playground*: 
 https://thegraph.com/explorer/subgraph/crazyrabbitltc/compoundproposals
 
-*Queries (HTTP)*
+*Queries (HTTP)*:
 https://api.thegraph.com/subgraphs/name/crazyrabbitltc/compoundproposals
