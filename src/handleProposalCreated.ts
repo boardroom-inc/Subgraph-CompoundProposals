@@ -1,4 +1,4 @@
-import { Bytes, log } from "@graphprotocol/graph-ts"
+import { Bytes, log, BigInt } from "@graphprotocol/graph-ts"
 import {
     ProposalCreated,
 } from "../generated/Contract/Contract"
@@ -40,6 +40,8 @@ export function handleProposalCreated(event: ProposalCreated): void {
     let votersProposals = voter.proposalsProposed
     votersProposals.push(proposal.id)
     voter.proposalsProposed = votersProposals
+    //Add Proposal count to Voter's History
+    voter.proposalsProposedCount = voter.proposalsParticipatedCount.plus(BigInt.fromI32(1))
 
     //Save Proposal
     proposal.save()

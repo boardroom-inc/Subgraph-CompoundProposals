@@ -43,6 +43,9 @@ export function handleVoteCast(event: VoteCast): void {
     votesParticipated.push(ballot.id)
     voter.ballotsCast = votesParticipated
 
+    //Add this participation to the Voters participation count
+    voter.proposalsParticipatedCount = voter.proposalsParticipatedCount.plus(BigInt.fromI32(1))
+
     //Add to count of participation. 
     //TODO: Check if we don't need to screen for double votes
     proposal.participentCount = proposal.participentCount.plus(BigInt.fromI32(1))
